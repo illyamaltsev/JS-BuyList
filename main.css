@@ -12,10 +12,38 @@ button{
     vertical-align: middle;
 }
 
+button::after {
+    background: purple;
+    border-radius: 8px 8px 8px 0px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    content: attr(data-tooltip); /* Главная часть кода, определяющая содержимое всплывающей подсказки */
+    margin-top: -24px;
+    opacity: 0; /* Наш элемент прозрачен... */
+    padding: 3px 7px;
+    position: absolute;
+    visibility: hidden; /* ...и скрыт. */
+            
+    transition: all 0.4s ease-in-out; /* Добавить плавности по вкусу */
+}
+        
+button:hover::after {
+    opacity: 1; /* Показываем его */
+    visibility: visible;
+}
+
+
 .container{
     max-width: 1100px;
     margin: auto;
     padding-top: 5%;
+}
+
+.block{
+    height: 20%;
+    background: white;
+    border-radius: 5px;
+    box-shadow:0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.08);
 }
 
 .right{
@@ -26,13 +54,6 @@ button{
 .left{
     width: 65%;
     float:left;
-}
-
-.block{
-    height: 20%;
-    background: white;
-    border-radius: 5px;
-    box-shadow:0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.08);
 }
 
 #add-button {
@@ -72,31 +93,33 @@ button{
 .item{
     width: 100%;
     border-top: 1px solid rgba(34,36,38,.15);
+    text-align: center;
+    padding: 15px 0 15px 0;
 }
 
 .column{
     display: inline-block;
-    padding: 2.5%;
-    width: 25%;
     /*border: 1px solid black;*/
+    margin: 0;
 }
 
 .first-column{
-
+    margin-left: 15px; 
+    width: 15%;
+    padding: 5px;
+    float: left;
 }
 
 .second-column{
-    padding: 1.8%;
-    margin-left: 4%;
-    margin-right: 4%;
-    vertical-align: top;
-    text-align: center;
+    margin: auto;
 }
 
 .third-column{
-    padding: 1.9%;
+    width: auto;
     text-align: right;
-    vertical-align: top;
+    vertical-align: middle;
+    float: right;
+    margin-right: 15px; 
 }
 
 .line{
@@ -169,10 +192,12 @@ button{
 
 .button-buy{
     height: 30px;
-    width: 70px;
+    width: 60px;
     border-radius: 5px;
     background: #E8E8E8;
     font-size: 11px;
+    margin: 0px;
+    border: none;
 }
 
 .button-delete{
@@ -181,4 +206,74 @@ button{
     background-color: #DB2828;
     color: #FFF;
     border-radius: 10px;
+    margin: 0px;
+    border: none;
+}
+
+.badge{
+    position: fixed;
+    bottom: 0;
+    left:20px;
+    background: purple;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transition: all 1s ease;
+    transform: translateY(20px);
+}
+
+.badge:hover{
+    transform: translateY(0);
+    background: blue;
+}
+
+.badge-title{
+    display: block;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.badge-author{
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+}
+
+@media print{
+    .badge{
+        transform: translateY(0);
+        border: 1px solid purple;
+        background: white;
+        color: black;
+    }
+
+    .badge-author{
+        color: black;
+    }
+
+    .badge-title{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .body{
+
+        max-width: 700px;
+    }
+    .block{
+        width: 95%;
+        float: none;
+        margin: auto;
+        max-width: 700px;
+    }
+
+    .right{
+        margin-top:50px;
+    }
+    .add-input{
+        margin-top: 15px;
+    }
 }

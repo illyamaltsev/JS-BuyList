@@ -10,20 +10,20 @@
         <div class="left block">
             <div class="form">
                 <input class="add-input" type="text" placeholder="Назва товару">
-                <button id="add-button" class="add-button">Додати</button>
+                <button id="add-button" class="add-button" data-tooltip="Додати">Додати</button>
             </div>
             <div class="item">
                 <div class="column first-column">
                     <span class="title">Помідори</span>
                 </div>
                 <div class="column second-column"> 
-                    <button class="circular-button minus">–</button>
+                    <button class="circular-button minus" data-tooltip="Мінус" >–</button>
                     <span class="amount">1</span>
-                    <button class="circular-button plus">+</button>
+                    <button class="circular-button plus" data-tooltip="Плюс">+</button>
                 </div>
                 <div class="column third-column">
-                    <button class="button-buy">Куплено</button>
-                    <button class="button-delete">x</button>
+                    <button class="button-buy" data-tooltip="Куплено">Куплено</button>
+                    <button class="button-delete" data-tooltip="Видалити">x</button>
                 </div>
             </div>
             <div class="item">
@@ -31,13 +31,13 @@
                     <span class="title">Печиво</span>
                 </div>
                 <div class="column second-column"> 
-                    <button class="circular-button minus">–</button>
+                    <button class="circular-button minus" data-tooltip="Мінус" >–</button>
                     <span class="amount">1</span>
-                    <button class="circular-button plus">+</button>
+                    <button class="circular-button plus" data-tooltip="Плюс">+</button>
                 </div>
                 <div class="column third-column">
-                    <button class="button-buy">Куплено</button>
-                    <button class="button-delete">x</button>
+                    <button class="button-buy" data-tooltip="Куплено">Куплено</button>
+                    <button class="button-delete" data-tooltip="Видалити">x</button>
                 </div>
             </div>
             <div class="item">
@@ -45,13 +45,13 @@
                     <span class="title">Сир</span>
                 </div>
                 <div class="column second-column"> 
-                    <button class="circular-button minus">–</button>
+                    <button class="circular-button minus" data-tooltip="Мінус" >–</button>
                     <span class="amount">1</span>
-                    <button class="circular-button plus">+</button>
+                    <button class="circular-button plus" data-tooltip="Плюс">+</button>
                 </div>
                 <div class="column third-column">
-                    <button class="button-buy">Куплено</button>
-                    <button class="button-delete">x</button>
+                    <button class="button-buy" data-tooltip="Куплено">Куплено</button>
+                    <button class="button-delete" data-tooltip="Видалити">x</button>
                 </div>
             </div>
         </div>
@@ -66,6 +66,10 @@
             <div class="sklad">
                 
             </div>
+        </div>
+        <div class="badge">
+            <span class="badge-title">BuyList-JS</span>
+            <span class="badge-author">Created by imaltsev</span>
         </div>
     </div>
 </body>
