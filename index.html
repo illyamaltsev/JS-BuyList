@@ -4,66 +4,25 @@
     <meta charset="UTF-8">
     <title>My Page</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="left block">
             <div class="form">
-                <input class="add-input" type="text" placeholder="Назва товару">
+                <input class="add-input" id="product-name" type="text" placeholder="Назва товару">
                 <button id="add-button" class="add-button" data-tooltip="Додати">Додати</button>
             </div>
-            <div class="item">
-                <div class="column first-column">
-                    <span class="title">Помідори</span>
-                </div>
-                <div class="column second-column"> 
-                    <button class="circular-button minus" data-tooltip="Мінус" >–</button>
-                    <span class="amount">1</span>
-                    <button class="circular-button plus" data-tooltip="Плюс">+</button>
-                </div>
-                <div class="column third-column">
-                    <button class="button-buy" data-tooltip="Куплено">Куплено</button>
-                    <button class="button-delete" data-tooltip="Видалити">x</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="column first-column">
-                    <span class="title">Печиво</span>
-                </div>
-                <div class="column second-column"> 
-                    <button class="circular-button minus" data-tooltip="Мінус" >–</button>
-                    <span class="amount">1</span>
-                    <button class="circular-button plus" data-tooltip="Плюс">+</button>
-                </div>
-                <div class="column third-column">
-                    <button class="button-buy" data-tooltip="Куплено">Куплено</button>
-                    <button class="button-delete" data-tooltip="Видалити">x</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="column first-column">
-                    <span class="title">Сир</span>
-                </div>
-                <div class="column second-column"> 
-                    <button class="circular-button minus" data-tooltip="Мінус" >–</button>
-                    <span class="amount">1</span>
-                    <button class="circular-button plus" data-tooltip="Плюс">+</button>
-                </div>
-                <div class="column third-column">
-                    <button class="button-buy" data-tooltip="Куплено">Куплено</button>
-                    <button class="button-delete" data-tooltip="Видалити">x</button>
-                </div>
-            </div>
+            
         </div>
         <div class="right block">
             <div class="line">Залишилося</div>
-            <div class="sklad">
-                <span class="product-item">Помідори <span class="circular-amount">1</span></span>
-                <span class="product-item">Печиво <span class="circular-amount">1</span></span>
-                <span class="product-item">Сир <span class="circular-amount">1</span></span>
+            <div class="sklad" id="still">
+                
             </div>
             <div class="line">Куплено</div>
-            <div class="sklad">
+            <div class="sklad" id="bought">
                 
             </div>
         </div>
@@ -74,3 +33,21 @@
     </div>
 </body>
 </html>
+
+<div class="item" id="product-item-left" style="display: none;">
+    <div class="column first-column">
+        <span class="title">Помідори</span>
+    </div>
+    <div class="column second-column"> 
+        <button class="circular-button minus" data-tooltip="Мінус" >–</button>
+        <span class="amount">1</span>
+        <button class="circular-button plus" data-tooltip="Плюс">+</button>
+    </div>
+    <div class="column third-column">
+        <button class="button-buy" data-tooltip="Куплено">Куплено</button>
+        <button class="button-delete" data-tooltip="Видалити">x</button>
+        <button class="not-buy" data-tooltip="Не куплено" style="display: none;">Не куплено</button>
+    </div>
+</div>
+
+<span class="product-item" id="product-item-right" style="display: none;"><span id="lable">Помідори</span> <span class="circular-amount">1</span></span>

@@ -17,18 +17,17 @@ button::after {
     border-radius: 8px 8px 8px 0px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     color: #FFF;
-    content: attr(data-tooltip); /* Главная часть кода, определяющая содержимое всплывающей подсказки */
+    content: attr(data-tooltip); 
     margin-top: -24px;
-    opacity: 0; /* Наш элемент прозрачен... */
+    opacity: 0;
     padding: 3px 7px;
     position: absolute;
-    visibility: hidden; /* ...и скрыт. */
-            
-    transition: all 0.4s ease-in-out; /* Добавить плавности по вкусу */
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
 }
         
 button:hover::after {
-    opacity: 1; /* Показываем его */
+    opacity: 1;
     visibility: visible;
 }
 
@@ -140,6 +139,7 @@ button:hover::after {
     padding: 5px;
     margin-top: 5px;
     border-radius: 5px;
+    margin-right: 5px; 
 }
 
 .circular-amount{
@@ -193,6 +193,16 @@ button:hover::after {
 .button-buy{
     height: 30px;
     width: 60px;
+    border-radius: 5px;
+    background: #E8E8E8;
+    font-size: 11px;
+    margin: 0px;
+    border: none;
+}
+
+.not-buy{
+	height: 30px;
+    width: 100px;
     border-radius: 5px;
     background: #E8E8E8;
     font-size: 11px;
